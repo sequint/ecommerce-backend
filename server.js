@@ -1,5 +1,6 @@
 const express = require('express')
 // import sequelize connection
+const { Sequelize } = require('sequelize')
 
 const app = express()
 
