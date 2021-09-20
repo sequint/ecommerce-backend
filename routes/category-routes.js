@@ -12,7 +12,7 @@ router.get('/categories', (req, res) => {
       model: Product
     }]
   })
-    .then(categories => console.log(categories))
+    .then(categories => res.json(categories))
     .catch(err => console.log(err))
 })
 
@@ -25,13 +25,15 @@ router.get('/categories/:id', (req, res) => {
       where: { id: req.params.id}
     }]
   })
+    .then(category => res.json(category))
+    .catch(err => console.log(err))
 })
 
 router.post('/categories', (req, res) => {
   // create a new category
-  Category.create({
-    category_name: req.body
-  })
+  Category.create(req.body)
+    .then(category => res.status(200).json(category))
+    .catch(err => console.log(err))
 })
 
 router.put('/categories/:id', (req, res) => {
