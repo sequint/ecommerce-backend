@@ -21,10 +21,16 @@ router.get('/tags/:id', (req, res) => {
 
 router.post('/tags', (req, res) => {
   // create a new tag
+  Tag.create(req.body)
+    .then(category => res.status(200).json(category))
+    .catch(err => console.log(err))
 })
 
 router.put('/tags/:id', (req, res) => {
   // update a tag's name by its `id` value
+  Tag.update(req.body, {
+    where: { id: req.params.id }
+  })
 })
 
 router.delete('/tags/:id', (req, res) => {
