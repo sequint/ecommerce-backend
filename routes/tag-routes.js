@@ -31,6 +31,13 @@ router.put('/tags/:id', (req, res) => {
   Tag.update(req.body, {
     where: { id: req.params.id }
   })
+    .then(tag => res.json({
+      status: 200,
+      tag: tag
+    }))
+    .catch(err => {
+      res.status(400).json(err)
+    })
 })
 
 router.delete('/tags/:id', (req, res) => {
@@ -38,6 +45,12 @@ router.delete('/tags/:id', (req, res) => {
   Tag.update(req.body, {
     where: { id: req.params.id }
   })
+    .then(tag => res.json({
+      status: 200
+    }))
+    .catch(err => {
+      res.status(400).json(err)
+    })
 })
 
 module.exports = router
