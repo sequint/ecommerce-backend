@@ -43,7 +43,7 @@ router.delete('/categories/:id', (req, res) => {
   Category.destroy({
     where: { id: req.params.id }
   })
-    .then(() => res.json({
+    .then(category => res.json({
       status: 200
     }))
     .catch(err => console.log(err))
