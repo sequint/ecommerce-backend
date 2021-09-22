@@ -52,4 +52,4 @@ OTHER DEALINGS IN THE SOFTWARE.
 
 ## Demo
 
-[![YouTube Demo](https://www.youtube.com/watch?v=niT45nRd8gQ)]
+[YouTube Demo](https://www.youtube.com/watch?v=niT45nRd8gQ)
